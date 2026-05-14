@@ -32,7 +32,7 @@ export function AdvisorPage() {
       <CardContent>
         <div className="mb-4 flex flex-wrap gap-2">
           {chips.map((chip) => (
-            <Button key={chip} variant="secondary" size="sm" onClick={() => sendMessage(chip)} disabled={isStreaming}>
+            <Button key={chip} variant="secondary" size="sm" className="h-auto min-h-8 whitespace-normal text-left" onClick={() => sendMessage(chip)} disabled={isStreaming}>
               <Sparkles className="h-4 w-4" /> {chip}
             </Button>
           ))}
@@ -46,9 +46,9 @@ export function AdvisorPage() {
             </div>
           ))}
         </div>
-        <form onSubmit={submit} className="mt-4 flex gap-2">
+        <form onSubmit={submit} className="mt-4 flex flex-col gap-2 sm:flex-row">
           <Input value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Ask about saving, spending, runway, or investment allocation..." />
-          <Button type="submit" disabled={isStreaming}><Send className="h-4 w-4" /> Send</Button>
+          <Button type="submit" className="w-full sm:w-auto" disabled={isStreaming}><Send className="h-4 w-4" /> Send</Button>
         </form>
       </CardContent>
     </Card>

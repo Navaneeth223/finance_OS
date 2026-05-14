@@ -60,12 +60,12 @@ export function TransactionsPage() {
           </div>
           <div>
             <label className="text-sm font-medium">Smart search</label>
-            <div className="mt-2 flex gap-2">
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input className="pl-9" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="show me food expenses over ₹500 last month" />
               </div>
-              <Button onClick={() => toast.success("AI categorized visible transactions")}><Sparkles className="h-4 w-4" /> Categorize</Button>
+              <Button className="w-full sm:w-auto" onClick={() => toast.success("AI categorized visible transactions")}><Sparkles className="h-4 w-4" /> Categorize</Button>
             </div>
             <div className="mt-4 flex flex-wrap gap-2 text-xs text-muted-foreground">
               <span className="rounded-md bg-muted px-2 py-1">food over ₹500</span>
