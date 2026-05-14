@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 24% 96%;
+  --foreground: 222 24% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 24% 8%;
+  --muted: 210 18% 91%;
+  --muted-foreground: 217 10% 42%;
+  --border: 214 18% 84%;
+  --input: 214 18% 84%;
+  --primary: 199 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 166 78% 42%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 76% 57%;
+}
+
+.dark {
+  --background: 220 23% 7%;
+  --foreground: 210 30% 96%;
+  --card: 220 20% 10%;
+  --card-foreground: 210 30% 96%;
+  --muted: 220 16% 15%;
+  --muted-foreground: 215 12% 68%;
+  --border: 220 14% 18%;
+  --input: 220 14% 18%;
+  --primary: 199 89% 56%;
+  --primary-foreground: 220 23% 7%;
+  --accent: 166 78% 48%;
+  --accent-foreground: 220 23% 7%;
+  --destructive: 0 76% 62%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.25);
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(22px);
+}
+
+.premium-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.24);
+  border-radius: 999px;
+}
